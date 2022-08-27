@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <title>SignalR Chat App</title>
+    
+
+</head>
+<body>
+    <div ng-controller="chatCtrl">
+        <input type="text" ng-model="username" />
+        <input type="text" ng-model="message" />
+        <button type="button" ng-click="Send()">Send</button>
+        <br />
+        <hr />
+        <ul>
+            <li ng-repeat="m in messages">
+                <b style="font-size:20px;">{{m.UserName}}</b>:
+                {{m.Message}}
+            </li>
+        </ul>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="Scripts/jquery-1.6.4.js"></script>
+    <script src="Scripts/jquery.signalR-2.4.3.js"></script>
+    <script src="signalr/hubs"></script>
+
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-resource.js"></script>
+    <script src="app/ChatController.js"></script>
+</body>
+</html>
